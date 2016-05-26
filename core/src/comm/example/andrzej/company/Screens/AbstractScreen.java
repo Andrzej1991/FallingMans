@@ -17,8 +17,6 @@ public class AbstractScreen implements Screen{
     protected FallingPeopleMain game;
     private OrthographicCamera camera;
     protected Stage stage;
-
-
     protected SpriteBatch spriteBatch;
 
 

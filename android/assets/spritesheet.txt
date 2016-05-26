@@ -1,0 +1,12 @@
+checked-button.jpg
+size: 162, 162
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+GJ_square01-hd
+  rotate: false
+  xy: 1, 1
+  size: 160, 160
+  orig: 160, 160
+  offset: 0, 0
+  index: -1

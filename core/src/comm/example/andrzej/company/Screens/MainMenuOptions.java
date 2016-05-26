@@ -37,22 +37,24 @@ public class MainMenuOptions extends AbstractScreen implements Screen {
          Gdx.input.setInputProcessor(stage);
          font = new BitmapFont();
          skin = new Skin();
-         buttonAtlas = new TextureAtlas(Gdx.files.internal("button.pack"));
+         buttonAtlas = new TextureAtlas("spritesheet.txt");
          skin.addRegions(buttonAtlas);
          textButtonStyle = new TextButton.TextButtonStyle();
          textButtonStyle.font = font;
-         textButtonStyle.up = skin.getDrawable("up-button");
-         textButtonStyle.down = skin.getDrawable("down-button");
-         textButtonStyle.checked = skin.getDrawable("checked-button");
+        // textButtonStyle.up = skin.getDrawable("up-button.jpg");
+        // textButtonStyle.down = skin.getDrawable("down-button.jpg");
+         textButtonStyle.checked = skin.getDrawable("checked-button.jpg");
          button = new TextButton("Button1", textButtonStyle);
          stage.addActor(button);
+
     }
 
     @Override
     public void render(float delta) {
         spriteBatch.begin();
-        spriteBatch.draw(backgroundTexture, 0, 0);
         stage.draw();
+        spriteBatch.draw(backgroundTexture, 0, 0);
+
         spriteBatch.end();
 
     }

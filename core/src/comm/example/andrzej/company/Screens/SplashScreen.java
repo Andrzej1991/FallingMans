@@ -1,6 +1,9 @@
-package comm.example.andrzej.company;
+package comm.example.andrzej.company.Screens;
 
 import com.badlogic.gdx.graphics.Texture;
+import com.badlogic.gdx.utils.Timer;
+
+import comm.example.andrzej.company.FallingPeopleMain;
 
 /**
  * Created by Andrzej on 2016-05-26.
@@ -13,7 +16,7 @@ public class SplashScreen extends AbstractScreen {
         super(game);
         init();
 
-      com.badlogic.gdx.utils.Timer.schedule(new com.badlogic.gdx.utils.Timer.Task() {
+      Timer.schedule(new Timer.Task() {
           @Override
           public void run() {
               game.setScreen(new MainMenuOptions(game));
@@ -22,7 +25,7 @@ public class SplashScreen extends AbstractScreen {
     }
 
     private void init() {
-        splashIMG = new Texture("chmury.jpg");
+        splashIMG = new Texture("chmury.png");
     }
     @Override
     public void render(float delta) {

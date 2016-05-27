@@ -3,11 +3,6 @@ package comm.example.andrzej.company.Screens;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.graphics.Texture;
-import com.badlogic.gdx.graphics.g2d.BitmapFont;
-import com.badlogic.gdx.graphics.g2d.TextureAtlas;
-import com.badlogic.gdx.scenes.scene2d.Stage;
-import com.badlogic.gdx.scenes.scene2d.ui.Skin;
-import com.badlogic.gdx.scenes.scene2d.ui.TextButton;
 
 import comm.example.andrzej.company.FallingPeopleMain;
 
@@ -16,44 +11,51 @@ import comm.example.andrzej.company.FallingPeopleMain;
  */
 public class MainMenuOptions extends AbstractScreen implements Screen {
 
-    Stage stage;
-    TextButton button;
-    TextButton.TextButtonStyle textButtonStyle;
-    BitmapFont font;
-    Skin skin;
-    TextureAtlas buttonAtlas;
-    private Texture backgroundTexture;
+    private Texture newGameButton;
+    private Texture exitGameButton;
+    private Texture highScoresButton;
+    private Texture background;
+
+
+
 
 
     public MainMenuOptions(FallingPeopleMain game) {
         super(game);
         init();
+
+
+
     }
 
-     private void init() {
-        backgroundTexture = new Texture("BG.png");
 
-         stage = new Stage();
-         Gdx.input.setInputProcessor(stage);
-         font = new BitmapFont();
-         skin = new Skin();
-         buttonAtlas = new TextureAtlas("spritesheet.txt");
-         skin.addRegions(buttonAtlas);
-         textButtonStyle = new TextButton.TextButtonStyle();
-         textButtonStyle.font = font;
-        // textButtonStyle.up = skin.getDrawable("up-button.jpg");
-        // textButtonStyle.down = skin.getDrawable("down-button.jpg");
-         textButtonStyle.checked = skin.getDrawable("checked-button.jpg");
-         button = new TextButton("Button1", textButtonStyle);
-         stage.addActor(button);
+
+    private void init() {
+        newGameButton = new Texture("newGameButton.jpg");
+         exitGameButton = new Texture("exitGameButton.jpg");
+         highScoresButton = new Texture("highScoresGameButton.jpg");
+         background = new Texture("test.png");
+
+
+    }
+    @Override
+    public void resize(int width, int height) {
+        super.resize(width, height);
+        float x = Gdx.graphics.getWidth();
+        float y = Gdx.graphics.getHeight();
+
 
     }
 
     @Override
     public void render(float delta) {
         spriteBatch.begin();
-        stage.draw();
-        spriteBatch.draw(backgroundTexture, 0, 0);
+
+        spriteBatch.draw(background,(FallingPeopleMain.WIDTH/2)- camera.position.x, camera.position.y);
+
+        spriteBatch.draw(newGameButton, 180, 380);
+        spriteBatch.draw(highScoresButton, 180, 340);
+        spriteBatch.draw(exitGameButton, 180, 300);
 
         spriteBatch.end();
 

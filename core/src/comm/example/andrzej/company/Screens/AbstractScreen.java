@@ -15,7 +15,7 @@ import comm.example.andrzej.company.FallingPeopleMain;
  */
 public class AbstractScreen implements Screen{
     protected FallingPeopleMain game;
-    private OrthographicCamera camera;
+    protected OrthographicCamera camera;
     protected Stage stage;
     protected SpriteBatch spriteBatch;
 
@@ -32,7 +32,7 @@ public class AbstractScreen implements Screen{
 
     private void createCamera() {
         camera = new OrthographicCamera();
-        camera.setToOrtho(false, FallingPeopleMain.WIDTH, FallingPeopleMain.HEIGHT);
+        camera.setToOrtho(false, FallingPeopleMain.WIDTH /2, FallingPeopleMain.HEIGHT/ 2);
         camera.update();
 
     }

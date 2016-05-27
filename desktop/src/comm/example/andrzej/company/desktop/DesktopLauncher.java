@@ -10,6 +10,7 @@ public class DesktopLauncher {
 		config.title = FallingPeopleMain.GAME_NAME;
 		config.width = FallingPeopleMain.WIDTH;
 		config.height = FallingPeopleMain.HEIGHT;
+
 		config.resizable = false;
 		new LwjglApplication(new FallingPeopleMain(), config);
 	}
